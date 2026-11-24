@@ -2,7 +2,7 @@
 
 ## 必要な環境
 
-- Node.js 20.9 以上
+- Node.js 24 以上（Node.js 24 LTS を推奨）
 - npm（Node.js に付属）
 
 起動に必要な環境変数はありません。
