@@ -1,0 +1,140 @@
+.history-section {
+  background: var(--surface-white);
+}
+
+.history-section {
+  min-height: 651px;
+  padding-top: 34px;
+}
+
+.timeline-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 50px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-list::before {
+  position: absolute;
+  top: 21px;
+  left: 181px;
+  width: 2px;
+  height: 406px;
+  background: var(--accent-blush);
+  content: "";
+}
+
+.timeline-event {
+  display: grid;
+  min-height: 45px;
+  grid-template-columns: 100px 112px minmax(0, 1fr);
+  align-items: center;
+}
+
+.timeline-event__date {
+  color: var(--accent-rose);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.timeline-event__node {
+  z-index: 1;
+  display: block;
+  width: 14px;
+  height: 14px;
+  justify-self: start;
+  margin-left: 75px;
+}
+
+.timeline-event__node svg {
+  display: block;
+  color: var(--accent-rose);
+  width: 14px;
+  height: 14px;
+}
+
+.timeline-event:last-child .timeline-event__node {
+  visibility: hidden;
+}
+
+.timeline-event__title {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
+  margin: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: var(--surface-white);
+  padding: 0 19px;
+  color: var(--text-berry);
+  font-family: var(--font-rounded);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+@media (max-width: 1180px) {
+
+  .timeline-event {
+    grid-template-columns: 100px 112px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .history-section {
+    min-height: unset;
+    padding-top: 64px;
+    padding-bottom: 72px;
+  }
+
+  .timeline-list::before {
+    left: 181px;
+    height: calc(100% - 24px);
+  }
+}
+
+@media (max-width: 620px) {
+
+  .history-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .timeline-list {
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .timeline-list::before {
+    top: 20px;
+    left: 79px;
+    height: calc(100% - 72px);
+  }
+
+  .timeline-event {
+    grid-template-columns: 72px 14px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .timeline-event__date {
+    font-size: 10px;
+  }
+
+  .timeline-event__node {
+    justify-self: center;
+    margin-left: 0;
+  }
+
+  .timeline-event__title {
+    min-height: 48px;
+    padding: 8px 12px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

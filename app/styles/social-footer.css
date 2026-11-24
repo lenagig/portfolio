@@ -1,0 +1,41 @@
+.social-footer {
+  display: grid;
+  height: 188px;
+  place-items: center;
+  margin-top: 125px;
+  background: var(--text-berry);
+  color: var(--surface-white);
+}
+
+.social-footer__icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 72px;
+}
+
+.social-icon,
+.social-icon svg {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 900px) {
+
+  .social-footer {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 620px) {
+
+  .social-footer {
+    height: 150px;
+    margin-top: 42px;
+  }
+
+  .social-footer__icons {
+    gap: 52px;
+  }
+}
