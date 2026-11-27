@@ -3,12 +3,18 @@ import { GitHubIcon, ProtoPediaIcon, XIcon } from "./icons";
 
 const icons = { x: XIcon, github: GitHubIcon, protopedia: ProtoPediaIcon };
 
-function SocialIcon({ label, icon }: (typeof socialLinks)[number]) {
+function SocialLink({ label, icon, href }: (typeof socialLinks)[number]) {
   const Icon = icons[icon];
   return (
-    <span className="social-icon" role="img" aria-label={label}>
+    <a
+      className="social-icon"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${label}（別タブで開きます）`}
+    >
       <Icon />
-    </span>
+    </a>
   );
 }
 
@@ -17,7 +23,7 @@ export function SocialFooter() {
     <footer className="social-footer" aria-label="SNS">
       <div className="social-footer__icons">
         {socialLinks.map((link) => (
-          <SocialIcon key={link.label} {...link} />
+          <SocialLink key={link.label} {...link} />
         ))}
       </div>
     </footer>

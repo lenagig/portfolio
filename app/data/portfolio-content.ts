@@ -33,6 +33,7 @@ export const achievementGroups = [
     year: "2026",
     entries: [
       "技育博 Vol.6　スポンサー賞（ウイングアーク１ｓｔ様）",
+      "基本情報技術者試験　合格",
       "CSS Winner　STAR",
       "DemoStage Summer　最優秀賞",
       "前期+E展　企業賞",
@@ -40,47 +41,8 @@ export const achievementGroups = [
   },
 ];
 
-export type Project = {
-  number: string;
-  name: string;
-  summary: string;
-  description: string;
-  role: string;
-  stack: string;
-};
-
-export const projects: Project[] = [
-  {
-    number: "01",
-    name: "Bloom Radio",
-    summary: "気分を選ぶと色と音が変わる、ミニ音楽プレイヤー。",
-    description:
-      "気分を選ぶと、その日の感情に合わせた色と音に出会えるミニ音楽プレイヤーのアイデアです。",
-    role: "UI / UX・フロントエンド",
-    stack: "HTML / CSS / JavaScript",
-  },
-  {
-    number: "02",
-    name: "Cat Explorer",
-    summary: "猫の足あとが案内する、作品ギャラリーのアイデア。",
-    description:
-      "猫の足あとをたどりながら、作品を見つけていくギャラリーのアイデアです。",
-    role: "UI / UX・フロントエンド",
-    stack: "React / CSS",
-  },
-  {
-    number: "03",
-    name: "Petal Archive",
-    summary: "スクロールで桜がひらく、季節の記録サイト。",
-    description:
-      "ページをスクロールすると桜がひらく、季節の記憶を残すサイトのアイデアです。",
-    role: "UI / UX・フロントエンド",
-    stack: "React / CSS",
-  },
-];
-
 export const socialLinks = [
-  { label: "X", icon: "x" },
-  { label: "GitHub", icon: "github" },
-  { label: "ProtoPedia", icon: "protopedia" },
+  { label: "X", icon: "x", href: "https://x.com/lena_gig" },
+  { label: "GitHub", icon: "github", href: "https://github.com/lenagig" },
+  { label: "ProtoPedia", icon: "protopedia", href: "https://protopedia.net/prototyper/lena_gig" },
 ] as const;

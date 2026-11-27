@@ -21,6 +21,10 @@
   height: 40px;
 }
 
+.social-icon:hover {
+  opacity: 0.75;
+}
+
 @media (max-width: 900px) {
 
   .social-footer {
