@@ -1,4 +1,4 @@
-import { projects } from "../data/portfolio-content";
+import { projects } from "../data/projects";
 import { ProjectGallery } from "./project-gallery";
 import { SectionHeading } from "./section-heading";
 

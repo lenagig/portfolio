@@ -48,13 +48,28 @@
   padding: 0 4px;
 }
 
+.project-dialog__eyebrow {
+  font-size: 12px;
+  line-height: 18px;
+}
+
 .project-dialog__cover-slot {
+  position: relative;
   width: 100%;
   aspect-ratio: 1;
   flex: 0 0 auto;
+  overflow: hidden;
   margin-top: 29px;
   border: 1px solid var(--border-soft);
   background: rgb(255 255 255 / 78%);
+}
+
+.project-dialog__cover-background {
+  object-fit: cover;
+}
+
+.project-dialog__cover-image {
+  object-fit: contain;
 }
 
 .project-dialog__track-info {
@@ -75,15 +90,6 @@
   white-space: nowrap;
 }
 
-.project-dialog__track-label {
-  margin: 8px 0 0;
-  color: var(--text-muted);
-  font-family: var(--font-ui);
-  font-size: 9px;
-  font-weight: 650;
-  line-height: 11px;
-}
-
 .project-dialog__player-summary {
   display: none;
 }
@@ -99,7 +105,7 @@
 
 .project-dialog__progress span {
   display: block;
-  width: 39%;
+  width: 0;
   height: 100%;
   border-radius: inherit;
   background: var(--accent-rose);
@@ -146,6 +152,18 @@
   color: var(--text-berry);
 }
 
+.project-dialog__control--secondary:enabled {
+  cursor: pointer;
+}
+
+.project-dialog__control--secondary:enabled:hover {
+  background: var(--accent-blush);
+}
+
+.project-dialog__control--secondary:disabled {
+  opacity: 0.45;
+}
+
 .project-dialog__control--play {
   width: 62px;
   height: 62px;
@@ -190,15 +208,6 @@
   height: 24px;
 }
 
-.project-dialog__title {
-  margin: 29px 0 0;
-  color: var(--text-berry);
-  font-family: var(--font-ui);
-  font-size: 30px;
-  font-weight: 750;
-  line-height: 36px;
-}
-
 .project-dialog__mobile-story-title,
 .project-dialog__mobile-label,
 .project-dialog__mobile-bar,
@@ -207,20 +216,20 @@
 }
 
 .project-dialog__summary {
-  margin: 14px 0 0;
+  margin: 26px 0 0;
   color: var(--text-ink);
   font-family: var(--font-rounded);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
-  line-height: 23px;
+  line-height: 30px;
 }
 
 .project-dialog__description {
-  margin: 20px 0 0;
-  color: var(--text-muted);
+  margin: 18px 0 0;
+  color: var(--text-ink);
   font-family: var(--font-rounded);
-  font-size: 13px;
-  line-height: 19px;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .project-dialog__divider {
@@ -234,7 +243,7 @@
   display: grid;
   grid-template-columns: minmax(0, 252fr) minmax(0, 262fr);
   gap: 12px;
-  margin: 33px 0 0;
+  margin: 28px 0 0;
 }
 
 .project-dialog__details div {
@@ -252,18 +261,19 @@
 .project-dialog__details dt {
   color: var(--accent-rose);
   font-family: var(--font-ui), "Noto Sans JP", sans-serif;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 650;
-  line-height: 12px;
+  line-height: 16px;
 }
 
 .project-dialog__details dd {
   margin: 0;
   color: var(--text-berry);
   font-family: var(--font-rounded);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 17px;
+  line-height: 22px;
+  overflow-wrap: anywhere;
 }
 
 .project-dialog__cta {
@@ -279,10 +289,15 @@
   padding: 0 22px;
   color: var(--surface-white);
   font-family: var(--font-rounded);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 22px;
   text-align: left;
+  text-decoration: none;
+}
+
+.project-dialog__cta:hover {
+  opacity: 0.85;
 }
 
 .project-dialog__cta span:last-child {
@@ -349,12 +364,6 @@
     margin-top: 16px;
   }
 
-  .project-dialog__track-label {
-    order: 0;
-    margin-top: 0;
-    color: var(--accent-rose);
-  }
-
   .project-dialog__track-title {
     order: 1;
     margin-top: 8px;
@@ -368,8 +377,8 @@
     margin: 7px 0 0;
     color: var(--text-ink);
     font-family: var(--font-rounded);
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 24px;
   }
 
   .project-dialog__progress {
@@ -377,14 +386,12 @@
   }
 
   .project-dialog__controls {
-    grid-template-columns: 24px 62px 24px;
-    gap: 54px;
+    grid-template-columns: 44px 62px 44px;
+    gap: 34px;
     margin-top: 16px;
   }
 
   .project-dialog__control--secondary {
-    width: 24px;
-    height: 24px;
     background: transparent;
   }
 
@@ -410,8 +417,7 @@
     display: inline;
   }
 
-  .project-dialog__title,
-.project-dialog__summary {
+  .project-dialog__summary {
     display: none;
   }
 
@@ -420,15 +426,15 @@
     margin: 10px 0 0;
     color: var(--text-berry);
     font-family: var(--font-rounded);
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
-    line-height: 21px;
+    line-height: 25px;
   }
 
   .project-dialog__description {
     margin-top: 10px;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 24px;
   }
 
   .project-dialog__divider,
@@ -444,7 +450,7 @@
     background: var(--surface-sakura);
     padding: 0 14px;
     color: var(--text-berry);
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .project-dialog__cta span:last-child {

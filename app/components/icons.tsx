@@ -37,7 +37,8 @@ export function CloseIcon(props: IconProps) {
 export function NextIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true" focusable="false" {...props}>
-      <path d="M6 5L16 12L6 19V5ZM18 5V19Z" fill="currentColor"/>
+      <path d="M5 5L15 12L5 19V5Z" fill="currentColor"/>
+      <rect x="17" y="5" width="2" height="14" rx="0.5" fill="currentColor"/>
     </svg>
   );
 }
@@ -53,7 +54,8 @@ export function PlayerPlayIcon(props: IconProps) {
 export function PreviousIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true" focusable="false" {...props}>
-      <path d="M18 5L8 12L18 19V5ZM6 5V19Z" fill="currentColor"/>
+      <path d="M19 5L9 12L19 19V5Z" fill="currentColor"/>
+      <rect x="5" y="5" width="2" height="14" rx="0.5" fill="currentColor"/>
     </svg>
   );
 }
